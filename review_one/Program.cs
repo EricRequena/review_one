@@ -14,6 +14,34 @@ class Program
 
         //Mostrar si l'alumne ha aprovat o suspès
         Answer(Suma(nota1, nota2, nota3));
+
+        //*Afegeix una funcionalitat al programa anterior que permeti emmagatzemar ciutats i els seus respectius codis postals. El programa ha de demanar el nom i el codi fins que l’usuari introdueixi un valor per finalitzar la introducció de dades i mostrar un llistat amb format dels valors introduïts. */
+        string[] ciutats = new string[100];
+        int[] codis = new int[100];
+        int i = 0;
+        string ciutat;
+        int codi;
+        do
+        {
+            Console.WriteLine("Introdueix el nom de la ciutat");
+            ciutat = Console.ReadLine();
+            if (ciutat != "")
+            {
+                ciutats[i] = ciutat;
+                Console.WriteLine("Introdueix el codi postal de la ciutat");
+                codi = Convert.ToInt32(Console.ReadLine());
+                codis[i] = codi;
+                i++;
+            }
+        } while (ciutat != "");
+        Console.WriteLine("Llistat de ciutats i codis postals");
+        for (int j = 0; j < i; j++)
+        {
+            Console.WriteLine(ciutats[j] + " - " + codis[j]);
+        }
+
+
+
     }
     public static void Answer(float answer)
     {
